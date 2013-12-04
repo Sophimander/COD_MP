@@ -121,11 +121,6 @@ namespace IW6_MP
                 if (load)
                     Load();
             }
-            public dvar_s(string Name, string value)
-            {
-                name = Name;
-                StringValue = value;
-            }
 
             public void Load()
             {
