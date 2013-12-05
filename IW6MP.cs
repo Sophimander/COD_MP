@@ -296,7 +296,24 @@ namespace IW6_MP
                 Console.Memory.WriteFloat(getPlayerState(Client) + 0x20, Origin.y);
                 Console.Memory.WriteFloat(getPlayerState(Client) + 0x24, Origin.z);
             }
-
+            
+            public void setOrginToPlayer(int Client, Vec3 Orgin)
+            {
+                for (int i = 0; i < 11; i++)
+                {
+                    if(i == Client)
+                    {
+                        
+                    }
+                    else
+                    {
+                        Console.Memory.WriteFloat(getPlayerState(i) + 0x1C, Origin.x);
+                        Console.Memory.WriteFloat(getPlayerState(i) + 0x20, Origin.y);
+                        Console.Memory.WriteFloat(getPlayerState(i) + 0x24, Origin.z);
+                    }
+                }
+            }
+            
             public void setSpread(int Client, bool Enabled)
             {
                 if (Enabled)
